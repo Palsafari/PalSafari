@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #066a2e;
+  --color-primary2: #0b803a;
+  --color-secondary: #ffa500;
+  --color-tertiary: #240b87;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 80%;
+  }
+  body {
+    @apply bg-gray-200; /* Change to any Tailwind color */
+  }
+}
+
+.carousel-container .react-multi-carousel-item {
+  min-height: 200px;
+}
