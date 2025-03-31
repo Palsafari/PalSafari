@@ -18,6 +18,10 @@
   }
 }
 
-.carousel-container .react-multi-carousel-item {
-  min-height: 200px;
+.swiper {
+  overflow: visible; /* Ensures slides don't get cut off */
+}
+
+.swiper-slide {
+  transition: transform 0.3s ease-in-out; /* Smooth effect */
 }

@@ -1,12 +1,7 @@
 import React from "react";
-import Product from "../components/Product";
 
 const LogIn = () => {
-  return (
-    <div>
-      <Product />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default LogIn;

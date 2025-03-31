@@ -9,8 +9,8 @@ import ContactUs from "./pages/ContactUs";
 import HostsHome from "./pages/HostsHome";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import AllSafaris from "./pages/AllSafaris";
 import MoreDetails from "./pages/MoreDetails";
-import ViewAll from "./pages/ViewAll";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -37,7 +37,8 @@ const App = () => {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/more-details" element={<MoreDetails />} />
-        <Route path="view-all/:category" element={<ViewAll />} />
+        <Route path="/all-safaris" element={<AllSafaris />} />
+        <Route path="/product/:id" element={<MoreDetails />} />
       </Routes>
       <Footer />
     </div>

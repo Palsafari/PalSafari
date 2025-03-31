@@ -1,186 +1,6 @@
-import beach1 from "./beach1.jpg";
-import beach2 from "./beach2.jpg";
-import beach3 from "./beach3.jpg";
-import beach4 from "./beach4.jpg";
-import beach5 from "./beach5.jpg";
-import beach6 from "./beach6.jpg";
-import beach7 from "./beach7.jpg";
-import beach8 from "./beach8.jpg";
-import beach9 from "./beach9.jpg";
-import beach10 from "./beach10.jpg";
-import beach11 from "./beach11.jpg";
-import beach12 from "./beach12.jpg";
-import beach13 from "./beach13.jpg";
-import beach14 from "./beach14.jpg";
-import beach15 from "./beach15.jpg";
-import beach16 from "./beach16.jpg";
-import beach17 from "./beach17.jpg";
-import beach18 from "./beach18.jpg";
-import beach19 from "./beach19.jpg";
-import beach20 from "./beach20.jpg";
-import beach21 from "./beach21.jpg";
-import beach22 from "./beach22.jpg";
-import beach23 from "./beach23.jpg";
-import beach24 from "./beach24.jpg";
-import beach25 from "./beach25.jpg";
-import beach26 from "./beach26.jpg";
-import beach27 from "./beach27.jpg";
-import beach28 from "./beach28.jpg";
-import beach29 from "./beach29.jpg";
-import beach30 from "./beach30.jpg";
-import beach31 from "./beach31.jpg";
-import beach32 from "./beach32.jpg";
-import beach33 from "./beach33.jpg";
-import beach34 from "./beach34.jpg";
-import beach35 from "./beach35.jpg";
-import beach36 from "./beach36.jpg";
-import beach37 from "./beach37.jpg";
-import beach38 from "./beach38.jpg";
-import beach39 from "./beach39.jpg";
-import beach40 from "./beach40.jpg";
-import beach41 from "./beach41.jpg";
-import beach42 from "./beach42.jpg";
-import beach43 from "./beach43.jpg";
-import beach44 from "./beach44.jpg";
-import beach45 from "./beach45.jpg";
-import culture1 from "./culture1.jpg";
-import culture2 from "./culture2.jpg";
-import culture3 from "./culture3.jpg";
-import culture4 from "./culture4.jpg";
-import culture5 from "./culture5.jpg";
-import culture6 from "./culture6.jpg";
-import culture7 from "./culture7.jpg";
-import culture8 from "./culture8.jpg";
-import culture9 from "./culture9.jpg";
-import culture10 from "./culture10.jpg";
-import culture11 from "./culture11.jpg";
-import culture12 from "./culture12.jpg";
-import culture13 from "./culture13.jpg";
-import culture14 from "./culture14.jpg";
-import culture15 from "./culture15.jpg";
-import culture16 from "./culture16.jpg";
-import culture17 from "./culture17.jpg";
-import culture18 from "./culture18.jpg";
-import culture19 from "./culture19.jpg";
-import culture20 from "./culture20.jpg";
-import culture21 from "./culture21.jpg";
-import culture22 from "./culture22.jpg";
-import culture23 from "./culture23.jpg";
-import culture24 from "./culture24.jpg";
-import culture25 from "./culture25.jpg";
-import culture26 from "./culture26.jpg";
-import culture27 from "./culture27.jpg";
-import culture28 from "./culture28.jpg";
-import culture29 from "./culture29.jpg";
-import culture30 from "./culture30.jpg";
-import culture31 from "./culture31.jpg";
-import culture32 from "./culture32.jpg";
-import culture33 from "./culture33.jpg";
-import culture34 from "./culture34.jpg";
-import culture35 from "./culture35.jpg";
-import culture36 from "./culture36.jpg";
-import culture37 from "./culture37.jpg";
-import culture38 from "./culture38.jpg";
-import culture39 from "./culture39.jpg";
-import culture40 from "./culture40.jpg";
-import culture41 from "./culture41.jpg";
-import culture42 from "./culture42.jpg";
-import culture43 from "./culture43.jpg";
-import culture44 from "./culture44.jpg";
-import culture45 from "./culture45.jpg";
 import dropdown_icon from "./dropdown_icon.svg";
-import image1 from "./image1.jpg";
-import image2 from "./image2.jpg";
-import image3 from "./image3.jpg";
-import image4 from "./image4.jpg";
-import image5 from "./image5.jpg";
-import image6 from "./image6.jpg";
-import image7 from "./image7.jpg";
-import image8 from "./image8.jpg";
-import image9 from "./image9.jpg";
-import image10 from "./image10.jpg";
-import image11 from "./image11.jpg";
-import image12 from "./image12.jpg";
-import image13 from "./image13.jpg";
-import image14 from "./image14.jpg";
-import image15 from "./image15.jpg";
-import image16 from "./image16.jpg";
-import image17 from "./image17.jpg";
-import image18 from "./image18.jpg";
-import image19 from "./image19.jpg";
-import image20 from "./image20.jpg";
-import image21 from "./image21.jpg";
-import image22 from "./image22.jpg";
-import image23 from "./image23.jpg";
-import image24 from "./image24.jpg";
-import image25 from "./image25.jpg";
-import image26 from "./image26.jpg";
-import image27 from "./image27.jpg";
-import image28 from "./image28.jpg";
-import image29 from "./image29.jpg";
-import image30 from "./image30.jpg";
-import image31 from "./image31.jpg";
-import image32 from "./image32.jpg";
-import image33 from "./image33.jpg";
-import image34 from "./image34.jpg";
-import image35 from "./image35.jpg";
-import image36 from "./image36.jpg";
-import image37 from "./image37.jpg";
-import image38 from "./image38.jpg";
-import image39 from "./image39.jpg";
-import image40 from "./image40.jpg";
-import image41 from "./image41.jpg";
-import image42 from "./image42.jpg";
-import image43 from "./image43.jpg";
-import image44 from "./image44.jpg";
-import image45 from "./image45.jpg";
 import logo from "./logo.png";
 import menuIcon from "/src/assets/menu_icon.png";
-import mountain1 from "./mountain1.jpg";
-import mountain2 from "./mountain2.jpg";
-import mountain3 from "./mountain3.jpg";
-import mountain4 from "./mountain4.jpg";
-import mountain5 from "./mountain5.jpg";
-import mountain6 from "./mountain6.jpg";
-import mountain7 from "./mountain7.jpg";
-import mountain8 from "./mountain8.jpg";
-import mountain9 from "./mountain9.jpg";
-import mountain10 from "./mountain10.jpg";
-import mountain11 from "./mountain11.jpg";
-import mountain12 from "./mountain12.jpg";
-import mountain13 from "./mountain13.jpg";
-import mountain14 from "./mountain14.jpg";
-import mountain15 from "./mountain15.jpg";
-import mountain16 from "./mountain16.jpg";
-import mountain17 from "./mountain17.jpg";
-import mountain18 from "./mountain18.jpg";
-import mountain19 from "./mountain19.jpg";
-import mountain20 from "./mountain20.jpg";
-import mountain21 from "./mountain21.jpg";
-import mountain22 from "./mountain22.jpg";
-import mountain23 from "./mountain23.jpg";
-import mountain24 from "./mountain24.jpg";
-import mountain25 from "./mountain25.jpg";
-import mountain26 from "./mountain26.jpg";
-import mountain27 from "./mountain27.jpg";
-import mountain28 from "./mountain28.jpg";
-import mountain29 from "./mountain29.jpg";
-import mountain30 from "./mountain30.jpg";
-import mountain31 from "./mountain31.jpg";
-import mountain32 from "./mountain32.jpg";
-import mountain33 from "./mountain33.jpg";
-import mountain34 from "./mountain34.jpg";
-import mountain35 from "./mountain35.jpg";
-import mountain36 from "./mountain36.jpg";
-import mountain37 from "./mountain37.jpg";
-import mountain38 from "./mountain38.jpg";
-import mountain39 from "./mountain39.jpg";
-import mountain40 from "./mountain40.jpg";
-import mountain41 from "./mountain41.jpg";
-import mountain42 from "./mountain42.jpg";
-import mountain43 from "./mountain43.jpg";
-import mountain44 from "./mountain44.jpg";
-import mountain45 from "./mountain45.jpg";
 import bath1 from "./bath1.jpg";
 import bath2 from "./bath2.jpg";
 import bath3 from "./bath3.jpg";
@@ -321,7 +141,17 @@ export const safariPackages = [
       en: "Lions, rhinos, giraffes, leopards, buffalos, hippos, crocodiles, elephants and so much more.",
     },
 
-    media_paths: [image1, image2, image3, image4, image5],
+    lead_image: [
+      "https://fastly.picsum.photos/id/18/2500/1667.jpg?hmac=JR0Z_jRs9rssQHZJ4b7xKF82kOj8-4Ackq75D_9Wmz8",
+    ],
+
+    media_paths: [
+      "https://fastly.picsum.photos/id/59/2464/1632.jpg?hmac=uTfe6jCzLvCzANvJgtpo-a0fKhO8BvjpwLNYX3lqx_Q",
+      "https://fastly.picsum.photos/id/18/2500/1667.jpg?hmac=JR0Z_jRs9rssQHZJ4b7xKF82kOj8-4Ackq75D_9Wmz8",
+      "https://fastly.picsum.photos/id/35/2758/3622.jpg?hmac=xIB3RTEGJ59FEnaQOXoaDgwX_K6PHAg57R0b4t7tiX0",
+      "https://fastly.picsum.photos/id/54/3264/2176.jpg?hmac=blh020fMeJ5Ru0p-fmXUaOAeYnxpOPHnhJojpzPLN3g",
+      "https://fastly.picsum.photos/id/55/4608/3072.jpg?hmac=ahGhylwdN52ULB37deeMZX6T_G7NiERtoPhwydMvUKQ",
+    ],
 
     num_days: 2,
 
@@ -451,6 +281,8 @@ export const safariPackages = [
 
     country: "Kenya",
 
+    country_code: "ke",
+
     province: "Rift Valley",
 
     nearest_city: "Nairobi",
@@ -574,7 +406,15 @@ export const safariPackages = [
       en: "Lions, rhinos, giraffes, leopards, buffalos, hippos, crocodiles, elephants and so much more.",
     },
 
-    media_paths: [image6, image7, image8, image9, image10],
+    lead_image: [
+      "https://fastly.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68",
+    ],
+
+    media_paths: [
+      "https://fastly.picsum.photos/id/11/2500/1667.jpg?hmac=xxjFJtAPgshYkysU_aqx2sZir-kIOjNR9vx0te7GycQ",
+      "https://fastly.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68",
+      "https://fastly.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68",
+    ],
 
     num_days: 2,
 
@@ -703,6 +543,8 @@ export const safariPackages = [
 
     country: "Kenya",
 
+    country_code: "ke",
+
     province: "Eastern",
 
     nearest_city: "Nairobi",
@@ -826,7 +668,19 @@ export const safariPackages = [
       en: "Lions, rhinos, giraffes, leopards, buffalos, hippos, crocodiles, elephants and so much more.",
     },
 
-    media_paths: [image11, image12, image13, image14, image15],
+    lead_image: [
+      "https://fastly.picsum.photos/id/11/2500/1667.jpg?hmac=xxjFJtAPgshYkysU_aqx2sZir-kIOjNR9vx0te7GycQ",
+    ],
+
+    media_paths: [
+      "https://fastly.picsum.photos/id/15/2500/1667.jpg?hmac=Lv03D1Y3AsZ9L2tMMC1KQZekBVaQSDc1waqJ54IHvo4",
+      "https://fastly.picsum.photos/id/17/2500/1667.jpg?hmac=HD-JrnNUZjFiP2UZQvWcKrgLoC_pc_ouUSWv8kHsJJY",
+      "https://fastly.picsum.photos/id/11/2500/1667.jpg?hmac=xxjFJtAPgshYkysU_aqx2sZir-kIOjNR9vx0te7GycQ",
+      "https://fastly.picsum.photos/id/28/4928/3264.jpg?hmac=GnYF-RnBUg44PFfU5pcw_Qs0ReOyStdnZ8MtQWJqTfA",
+      "https://fastly.picsum.photos/id/40/4106/2806.jpg?hmac=MY3ra98ut044LaWPEKwZowgydHZ_rZZUuOHrc3mL5mI",
+      "https://fastly.picsum.photos/id/33/5000/3333.jpg?hmac=h5NVRcUXmsWm612YQOroHSA5n9R7gxZgoP60LHBPHtw",
+      "https://fastly.picsum.photos/id/59/2464/1632.jpg?hmac=uTfe6jCzLvCzANvJgtpo-a0fKhO8BvjpwLNYX3lqx_Q",
+    ],
 
     num_days: 2,
 
@@ -955,6 +809,8 @@ export const safariPackages = [
 
     country: "Tanzania",
 
+    country_code: "tz",
+
     province: "Eastern",
 
     nearest_city: "Dar es Salaam",
@@ -1078,7 +934,17 @@ export const safariPackages = [
       en: "Lions, rhinos, giraffes, leopards, buffalos, hippos, crocodiles, elephants and so much more.",
     },
 
-    media_paths: [image16, image17, image18, image19, image20],
+    lead_image: [
+      "https://fastly.picsum.photos/id/15/2500/1667.jpg?hmac=Lv03D1Y3AsZ9L2tMMC1KQZekBVaQSDc1waqJ54IHvo4",
+    ],
+
+    media_paths: [
+      "https://fastly.picsum.photos/id/15/2500/1667.jpg?hmac=Lv03D1Y3AsZ9L2tMMC1KQZekBVaQSDc1waqJ54IHvo4",
+      "https://fastly.picsum.photos/id/55/4608/3072.jpg?hmac=ahGhylwdN52ULB37deeMZX6T_G7NiERtoPhwydMvUKQ",
+      "https://fastly.picsum.photos/id/54/3264/2176.jpg?hmac=blh020fMeJ5Ru0p-fmXUaOAeYnxpOPHnhJojpzPLN3g",
+      "https://fastly.picsum.photos/id/35/2758/3622.jpg?hmac=xIB3RTEGJ59FEnaQOXoaDgwX_K6PHAg57R0b4t7tiX0",
+      "https://fastly.picsum.photos/id/81/5000/3250.jpg?hmac=gFiddUc7I25C06HUIMesyaFCjSOWE3L3uDl0QSyuX4M",
+    ],
 
     num_days: 2,
 
@@ -1208,6 +1074,8 @@ export const safariPackages = [
 
     country: "Tanzania",
 
+    country_code: "tz",
+
     province: "Nothern",
 
     nearest_city: "Arusha",
@@ -1331,7 +1199,19 @@ export const safariPackages = [
       en: "Lions, rhinos, giraffes, leopards, buffalos, hippos, crocodiles, elephants and so much more.",
     },
 
-    media_paths: [image21, image22, image23, image24, image25],
+    lead_image: [
+      "https://fastly.picsum.photos/id/17/2500/1667.jpg?hmac=HD-JrnNUZjFiP2UZQvWcKrgLoC_pc_ouUSWv8kHsJJY",
+    ],
+
+    media_paths: [
+      "https://fastly.picsum.photos/id/79/2000/3011.jpg?hmac=TQsXWj0kLBLRXbSAh2Pygog1-cOefqpjEoKyl0uD3tg",
+      "https://fastly.picsum.photos/id/17/2500/1667.jpg?hmac=HD-JrnNUZjFiP2UZQvWcKrgLoC_pc_ouUSWv8kHsJJY",
+      "https://fastly.picsum.photos/id/65/4912/3264.jpg?hmac=uq0IxYtPIqRKinGruj45KcPPzxDjQvErcxyS1tn7bG0",
+      "https://fastly.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68",
+      "https://fastly.picsum.photos/id/11/2500/1667.jpg?hmac=xxjFJtAPgshYkysU_aqx2sZir-kIOjNR9vx0te7GycQ",
+      "https://fastly.picsum.photos/id/15/2500/1667.jpg?hmac=Lv03D1Y3AsZ9L2tMMC1KQZekBVaQSDc1waqJ54IHvo4",
+      "https://fastly.picsum.photos/id/17/2500/1667.jpg?hmac=HD-JrnNUZjFiP2UZQvWcKrgLoC_pc_ouUSWv8kHsJJY",
+    ],
 
     num_days: 5,
 
@@ -1593,6 +1473,8 @@ export const safariPackages = [
 
     country: "Kenya",
 
+    country_code: "ke",
+
     province: "Rift Valley",
 
     nearest_city: "Nairobi",
@@ -1716,7 +1598,15 @@ export const safariPackages = [
       en: "Lions, rhinos, giraffes, leopards, buffalos, hippos, crocodiles, elephants and so much more.",
     },
 
-    media_paths: [image26, image27, image28, image29, image30],
+    lead_image: [
+      "https://fastly.picsum.photos/id/28/4928/3264.jpg?hmac=GnYF-RnBUg44PFfU5pcw_Qs0ReOyStdnZ8MtQWJqTfA",
+    ],
+
+    media_paths: [
+      "https://fastly.picsum.photos/id/28/4928/3264.jpg?hmac=GnYF-RnBUg44PFfU5pcw_Qs0ReOyStdnZ8MtQWJqTfA",
+      "https://fastly.picsum.photos/id/28/4928/3264.jpg?hmac=GnYF-RnBUg44PFfU5pcw_Qs0ReOyStdnZ8MtQWJqTfA",
+      "https://fastly.picsum.photos/id/40/4106/2806.jpg?hmac=MY3ra98ut044LaWPEKwZowgydHZ_rZZUuOHrc3mL5mI",
+    ],
 
     num_days: 5,
 
@@ -1978,6 +1868,8 @@ export const safariPackages = [
 
     country: "Tanzania",
 
+    country_code: "tz",
+
     province: "Nothern",
 
     nearest_city: "Arusha",
@@ -2101,7 +1993,18 @@ export const safariPackages = [
       en: "Lions, rhinos, giraffes, leopards, buffalos, hippos, crocodiles, elephants and so much more.",
     },
 
-    media_paths: [image31, image32, image33, image34, image35],
+    lead_image: [
+      "https://fastly.picsum.photos/id/40/4106/2806.jpg?hmac=MY3ra98ut044LaWPEKwZowgydHZ_rZZUuOHrc3mL5mI",
+    ],
+
+    media_paths: [
+      "https://fastly.picsum.photos/id/40/4106/2806.jpg?hmac=MY3ra98ut044LaWPEKwZowgydHZ_rZZUuOHrc3mL5mI",
+      "https://fastly.picsum.photos/id/59/2464/1632.jpg?hmac=uTfe6jCzLvCzANvJgtpo-a0fKhO8BvjpwLNYX3lqx_Q",
+      "https://fastly.picsum.photos/id/18/2500/1667.jpg?hmac=JR0Z_jRs9rssQHZJ4b7xKF82kOj8-4Ackq75D_9Wmz8",
+      "https://fastly.picsum.photos/id/35/2758/3622.jpg?hmac=xIB3RTEGJ59FEnaQOXoaDgwX_K6PHAg57R0b4t7tiX0",
+      "https://fastly.picsum.photos/id/54/3264/2176.jpg?hmac=blh020fMeJ5Ru0p-fmXUaOAeYnxpOPHnhJojpzPLN3g",
+      "https://fastly.picsum.photos/id/55/4608/3072.jpg?hmac=ahGhylwdN52ULB37deeMZX6T_G7NiERtoPhwydMvUKQ",
+    ],
 
     num_days: 5,
 
@@ -2359,6 +2262,8 @@ export const safariPackages = [
 
     country: "Tanzania",
 
+    country_code: "tz",
+
     province: "Eastern",
 
     nearest_city: "Dar es Salaam",
@@ -2482,7 +2387,20 @@ export const safariPackages = [
       en: "Lions, rhinos, giraffes, leopards, buffalos, hippos, crocodiles, elephants and so much more.",
     },
 
-    media_paths: [image36, image37, image38, image39, image40],
+    lead_image: [
+      "https://fastly.picsum.photos/id/33/5000/3333.jpg?hmac=h5NVRcUXmsWm612YQOroHSA5n9R7gxZgoP60LHBPHtw",
+    ],
+
+    media_paths: [
+      "https://fastly.picsum.photos/id/33/5000/3333.jpg?hmac=h5NVRcUXmsWm612YQOroHSA5n9R7gxZgoP60LHBPHtw",
+      "https://fastly.picsum.photos/id/79/2000/3011.jpg?hmac=TQsXWj0kLBLRXbSAh2Pygog1-cOefqpjEoKyl0uD3tg",
+      "https://fastly.picsum.photos/id/17/2500/1667.jpg?hmac=HD-JrnNUZjFiP2UZQvWcKrgLoC_pc_ouUSWv8kHsJJY",
+      "https://fastly.picsum.photos/id/65/4912/3264.jpg?hmac=uq0IxYtPIqRKinGruj45KcPPzxDjQvErcxyS1tn7bG0",
+      "https://fastly.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68",
+      "https://fastly.picsum.photos/id/11/2500/1667.jpg?hmac=xxjFJtAPgshYkysU_aqx2sZir-kIOjNR9vx0te7GycQ",
+      "https://fastly.picsum.photos/id/15/2500/1667.jpg?hmac=Lv03D1Y3AsZ9L2tMMC1KQZekBVaQSDc1waqJ54IHvo4",
+      "https://fastly.picsum.photos/id/17/2500/1667.jpg?hmac=HD-JrnNUZjFiP2UZQvWcKrgLoC_pc_ouUSWv8kHsJJY",
+    ],
 
     num_days: 7,
 
@@ -2830,6 +2748,8 @@ export const safariPackages = [
 
     country: "Kenya",
 
+    country_code: "ke",
+
     province: "Rift Valley",
 
     nearest_city: "Nairobi",
@@ -2953,7 +2873,18 @@ export const safariPackages = [
       en: "Lions, rhinos, giraffes, leopards, buffalos, hippos, crocodiles, elephants and so much more.",
     },
 
-    media_paths: [image41, image42, image43, image44, image45],
+    lead_image: [
+      "https://fastly.picsum.photos/id/59/2464/1632.jpg?hmac=uTfe6jCzLvCzANvJgtpo-a0fKhO8BvjpwLNYX3lqx_Q",
+    ],
+
+    media_paths: [
+      "https://fastly.picsum.photos/id/59/2464/1632.jpg?hmac=uTfe6jCzLvCzANvJgtpo-a0fKhO8BvjpwLNYX3lqx_Q",
+      "https://fastly.picsum.photos/id/15/2500/1667.jpg?hmac=Lv03D1Y3AsZ9L2tMMC1KQZekBVaQSDc1waqJ54IHvo4",
+      "https://fastly.picsum.photos/id/55/4608/3072.jpg?hmac=ahGhylwdN52ULB37deeMZX6T_G7NiERtoPhwydMvUKQ",
+      "https://fastly.picsum.photos/id/54/3264/2176.jpg?hmac=blh020fMeJ5Ru0p-fmXUaOAeYnxpOPHnhJojpzPLN3g",
+      "https://fastly.picsum.photos/id/35/2758/3622.jpg?hmac=xIB3RTEGJ59FEnaQOXoaDgwX_K6PHAg57R0b4t7tiX0",
+      "https://fastly.picsum.photos/id/81/5000/3250.jpg?hmac=gFiddUc7I25C06HUIMesyaFCjSOWE3L3uDl0QSyuX4M",
+    ],
 
     num_days: 7,
 
@@ -3300,6 +3231,8 @@ export const safariPackages = [
     accomodation_address: "Jevas Hotel Encore, Arusha, Tanzania",
 
     country: "Tanzania",
+
+    country_code: "tz",
 
     province: "Nothern",
 
