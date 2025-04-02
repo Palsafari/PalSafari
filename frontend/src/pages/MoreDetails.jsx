@@ -1,5 +1,10 @@
 import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { Star, Flame, Heart, Share2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { safariPackages } from "../assets/assets";
@@ -15,11 +20,23 @@ const MoreDetails = () => {
   const { t } = useTranslation();
   return (
     <div className="max-w-screen-lg mx-auto pt-5 px-3 md:px-6">
-      {/* Lead Image */}
-      <img
-        src={safariPackage.lead_image[0]}
-        className="w-full h-64 object-cover rounded-lg"
-      />
+      {/* Swiper Carousel */}
+      <Swiper
+        modules={[Navigation, Pagination]}
+        navigation
+        pagination={{ clickable: true }}
+        className="w-full h-64 rounded-lg"
+      >
+        {safariPackage.media_paths.map((image, index) => (
+          <SwiperSlide key={index}>
+            <img
+              src={image}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-64 object-cover rounded-lg"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
       {/* Title */}
       <h1 className="text-2xl font-bold mt-4">
@@ -126,7 +143,7 @@ const MoreDetails = () => {
 
       {/*Tab Contents*/}
       <div className="p-4 bg-gray-100 mt-2 rounded-lg">
-        {/*Description Tab*/}
+        {/*Overview Tab*/}
         {activeTab === "overviewTab" && (
           <div>
             <p>{safariPackage.description[userLang]}</p>
@@ -256,7 +273,7 @@ const MoreDetails = () => {
       </div>
 
       {/* Wishlist, Share, Reserve & Booking Buttons */}
-      <div className="mt-7 pb-6 flex justify-between items-center space-x-4">
+      <div className="mt-7 pb-6 flex justify-between items-center gap-4">
         {/* Wishlist */}
         <div className="flex flex-col items-center cursor-pointer transition-transform hover:scale-105">
           <Heart className="w-7 h-7 text-primary" />
@@ -265,7 +282,7 @@ const MoreDetails = () => {
 
         {/* Share */}
         <div
-          className="flex flex-col items-center cursor-pointer transition-transform hover:scale-105"
+          className="flex flex-col mr-0.5 items-center cursor-pointer transition-transform hover:scale-105"
           onClick={() => {
             if (navigator.share) {
               navigator
@@ -286,7 +303,7 @@ const MoreDetails = () => {
         </div>
 
         {/* Reserve */}
-        <button className="p-1 leading-tight cursor-pointer border border-primary text-sm text-primary rounded-lg transition-transform hover:border-primary2 hover:scale-110">
+        <button className="p-1 leading-tight border border-primary text-sm text-primary rounded-lg transition-transform hover:border-primary2 hover:scale-110">
           {t("reserveBtna")}
           <br />
           <span className="p-0 text-sm leading-none text-orange-500">
@@ -295,7 +312,7 @@ const MoreDetails = () => {
         </button>
 
         {/* Book Now */}
-        <button className="px-3 py-2 cursor-pointer bg-primary text-white rounded-lg font-semibold transition-transform hover:bg-primary2 hover:scale-110">
+        <button className="px-3 py-2 bg-primary text-white rounded-lg font-semibold transition-transform hover:bg-primary2 hover:scale-110">
           {t("bookNowBtn")}
         </button>
       </div>
