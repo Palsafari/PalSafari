@@ -17,9 +17,19 @@ const Product = ({
   const { t } = useTranslation();
   const navigate = useNavigate();
 
+  const ribbonColor = (badge) => {
+    if (badge == "Budget") {
+      return "#009dff";
+    } else if (badge == "Silver") {
+      return "#8F00FF";
+    } else {
+      return "#ff9100";
+    }
+  };
+
   return (
     <div className="bg-white inline-block md:ml-0.5 p-0.5 md:p-1 rounded-lg shadow-md">
-      <Badge.Ribbon text={t(badge)} color="#8F00FF">
+      <Badge.Ribbon text={t(badge)} color={ribbonColor(badge)}>
         <div>
           <img
             className="h-[110px] md:h-[130px] w-[150px] md:w-[180px] rounded-t-lg object-cover"
@@ -27,7 +37,7 @@ const Product = ({
             alt="product image"
           />
         </div>
-        <div className="flex justify-between">
+        <div className="mt-1 flex justify-between items-start">
           <div className="flex flex-row">
             <div className="text-xs text-gray-900 md:font-semibold">
               {t("days")}
@@ -36,7 +46,11 @@ const Product = ({
           </div>
           <div className="text-xs text-gray-900">{t(country)}</div>
           <div>
-            <img className="h-6 w-12 object-cover" src={assets.review} alt="" />
+            <img
+              className="h-6 w-12 pb-2 md:pb-1 object-contain"
+              src={assets.review}
+              alt=""
+            />
           </div>
         </div>
         <div className="w-[150px] md:w-[180px] text-sm md:font-semibold text-black leading-none">

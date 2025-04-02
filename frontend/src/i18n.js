@@ -13,7 +13,35 @@ import jaLang from "./locales/ja/ja.json";
 import deLang from "./locales/de/de.json";
 import zhLang from "./locales/zh/zh.json";
 
-const userLang = (navigator.language || "en-US").split("-")[0];
+const xuserLang = (navigator.language || navigator.userLanguage).split("-")[0];
+
+const convertLang = (xtractedLang) => {
+  if (xtractedLang == "zh") {
+    return "zh";
+  } else if (xtractedLang == "de") {
+    return "de";
+  } else if (xtractedLang == "ja") {
+    return "ja";
+  } else if (xtractedLang == "fr") {
+    return "fr";
+  } else if (xtractedLang == "ar") {
+    return "ar";
+  } else if (xtractedLang == "pt") {
+    return "pt";
+  } else if (xtractedLang == "es") {
+    return "es";
+  } else if (xtractedLang == "ko") {
+    return "ko";
+  } else if (xtractedLang == "ru") {
+    return "ru";
+  } else if (xtractedLang == "hi") {
+    return "hi";
+  } else {
+    return "en";
+  }
+};
+
+const userLang = convertLang(xuserLang);
 
 // the translations
 // (tip move them in a JSON file and import them,

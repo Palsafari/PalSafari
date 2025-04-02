@@ -1,18 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useTranslation } from "react-i18next";
 import Product from "./Product";
-import { safariPackages } from "../assets/assets";
+import { largestPriceDiscount, safariPackages } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
+import AppContext from "../context/AppContext";
 
 const Safaris = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const userLang = (navigator.language || "en-US").split("-")[0];
+  const { userLang } = useContext(AppContext);
 
   return (
     <div className="pt-5 pb-2 rtl:space-x-reverse">
@@ -69,7 +70,9 @@ const Safaris = () => {
                         ((100 - safariPackage.discount.percentage) / 100)
                     )
               }
-              listed_price={Math.ceil(safariPackage.high_season_price * 1.56)}
+              listed_price={Math.ceil(
+                safariPackage.high_season_price * largestPriceDiscount
+              )}
             />
           </SwiperSlide>
         ))}

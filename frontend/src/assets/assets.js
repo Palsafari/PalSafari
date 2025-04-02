@@ -92,6 +92,9 @@ export const childDiscounts = {
   en: "20% special offer for each child guest.",
 };
 
+export const largestPriceDiscount = 1.56;
+const getRandomNumber = () => Math.floor(Math.random() * (103 - 67 + 1)) + 67;
+
 export const safariPackages = [
   {
     id: 10001,
@@ -126,6 +129,7 @@ export const safariPackages = [
       en: "This is an opportunity to visit the most captivating wilderness in Kenya. We will tour the African savana to see many wild animals and enjoy the beautiful scenery. You will be given accommodation, food, water, a driver and a tour guide.",
     },
 
+    //Re-do attractions//
     attractions: {
       zh: "狮子、犀牛、长颈鹿、豹子、水牛、河马、鳄鱼、大象等等。",
       de: "Löwen, Nashörner, Giraffen, Leoparden, Büffel, Flusspferde, Krokodile, Elefanten und viele mehr.",
@@ -159,7 +163,9 @@ export const safariPackages = [
 
     min_pax: 2,
 
-    review_media: [review],
+    // remove: [review],
+
+    num_reviewers: getRandomNumber(),
 
     meeting_Up_Directions: {
       zh: "如果您乘坐飞机旅行，我们将在乔莫·肯雅塔国际机场接您。如果您乘坐巴士或火车旅行，我们将在内罗毕的车站接您。如果您已经在内罗毕，我们将前往您的酒店或您在内罗毕市中心的首选地点接您。",
@@ -422,7 +428,9 @@ export const safariPackages = [
 
     min_pax: 2,
 
-    review_media: [review],
+    // remove: [review],
+
+    num_reviewers: getRandomNumber(),
 
     meeting_Up_Directions: {
       zh: "如果您乘坐飞机旅行，我们将在乔莫·肯雅塔国际机场接您。如果您乘坐巴士或火车旅行，我们将在内罗毕的车站接您。如果您已经在内罗毕，我们将前往您的酒店或您在内罗毕市中心的首选地点接您。",
@@ -561,7 +569,7 @@ export const safariPackages = [
 
     category: "Safari",
 
-    badge: "Budget",
+    badge: "Silver",
 
     high_season: [],
 
@@ -688,7 +696,9 @@ export const safariPackages = [
 
     min_pax: 2,
 
-    review_media: [review],
+    // remove: [review],
+
+    num_reviewers: getRandomNumber(),
 
     meeting_Up_Directions: {
       zh: "如果您乘坐飞机旅行，我们将在朱利叶斯·尼雷尔国际机场接您。如果您乘坐巴士或火车旅行，我们将在达累斯萨拉姆的车站接您。如果您已经在达累斯萨拉姆，我们将前往您的酒店或您在达累斯萨拉姆市中心的首选地点接您。",
@@ -827,7 +837,7 @@ export const safariPackages = [
 
     category: "Safari",
 
-    badge: "Budget",
+    badge: "Luxury",
 
     high_season: ["June", "July", "August", "September", "October"],
 
@@ -952,7 +962,9 @@ export const safariPackages = [
 
     min_pax: 2,
 
-    review_media: [review],
+    // remove: [review],
+
+    num_reviewers: getRandomNumber(),
 
     meeting_Up_Directions: {
       zh: "如果您乘坐飞机旅行，我们将在乞力马扎罗国际机场或阿鲁沙国内机场接您。如果您乘坐巴士或火车旅行，我们将在阿鲁沙的车站接您。如果您已经在阿鲁沙，我们将前往您的酒店或您在阿鲁沙市中心的首选地点接您。",
@@ -1219,7 +1231,9 @@ export const safariPackages = [
 
     min_pax: 4,
 
-    review_media: [review],
+    // remove: [review],
+
+    num_reviewers: getRandomNumber(),
 
     meeting_Up_Directions: {
       zh: "如果您乘坐飞机旅行，我们将在乔莫·肯雅塔国际机场接您。如果您乘坐巴士或火车旅行，我们将在内罗毕的车站接您。如果您已经在内罗毕，我们将前往您的酒店或您在内罗毕市中心的首选地点接您。",
@@ -1614,7 +1628,9 @@ export const safariPackages = [
 
     min_pax: 4,
 
-    review_media: [review],
+    // remove: [review],
+
+    num_reviewers: getRandomNumber(),
 
     meeting_Up_Directions: {
       zh: "如果您乘坐飞机旅行，我们将在乞力马扎罗国际机场或阿鲁沙国内机场接您。如果您乘坐巴士或火车旅行，我们将在阿鲁沙的车站接您。如果您已经在阿鲁沙，我们将前往您的酒店或您在阿鲁沙市中心的首选地点接您。",
@@ -2012,7 +2028,9 @@ export const safariPackages = [
 
     min_pax: 4,
 
-    review_media: [review],
+    // remove: [review],
+
+    num_reviewers: getRandomNumber(),
 
     meeting_Up_Directions: {
       zh: "如果您乘坐飞机旅行，我们将在朱利叶斯·尼雷尔国际机场接您。如果您乘坐巴士或火车旅行，我们将在达累斯萨拉姆的车站接您。如果您已经在达累斯萨拉姆，我们将前往您的酒店或您在达累斯萨拉姆市中心的首选地点接您。",
@@ -2408,7 +2426,9 @@ export const safariPackages = [
 
     min_pax: 4,
 
-    review_media: [review],
+    // remove: [review],
+
+    num_reviewers: getRandomNumber(),
 
     meeting_Up_Directions: {
       zh: "如果您乘坐飞机旅行，我们将在乔莫·肯雅塔国际机场接您。如果您乘坐巴士或火车旅行，我们将在内罗毕的车站接您。如果您已经在内罗毕，我们将前往您的酒店或您在内罗毕市中心的首选地点接您。",
@@ -2892,7 +2912,9 @@ export const safariPackages = [
 
     min_pax: 4,
 
-    review_media: [review],
+    // remove: [review],
+
+    num_reviewers: getRandomNumber(),
 
     meeting_Up_Directions: {
       zh: "如果您乘坐飞机旅行，我们将在乞力马扎罗国际机场或阿鲁沙国内机场接您。如果您乘坐巴士或火车旅行，我们将在阿鲁沙的车站接您。如果您已经在阿鲁沙，我们将前往您的酒店或您在阿鲁沙市中心的首选地点接您。",
