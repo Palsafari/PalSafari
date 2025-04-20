@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+* {
+  font-family: Roboto;
+}
+
+@theme {
+  --color-primary: #066a2e;
+  --color-primary2: #0b803a;
+  --color-secondary: #ffa500;
+  --color-tertiary: #240b87;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 80%;
+  }
+  body {
+    @apply bg-gray-200; /* Change to any Tailwind color */
+  }
+}
+
+.swiper {
+  overflow: visible; /* Ensures slides don't get cut off */
+}
+
+.swiper-slide {
+  transition: transform 0.3s ease-in-out; /* Smooth effect */
+}
