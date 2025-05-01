@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 
 const Header = () => {
   const { t } = useTranslation();
@@ -10,7 +10,10 @@ const Header = () => {
         {t("headerMessageTitle")}
       </p>
       <p className="text-white text-sm lg:text-base text-center font-light">
-        {t("headerMessageParagraph")}
+        <Trans
+          i18nKey="headerMessageDescription"
+          components={{ bold: <strong className="font-semibold" /> }}
+        />
       </p>
     </div>
   );

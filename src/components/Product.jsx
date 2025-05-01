@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Badge } from "antd";
 import { useTranslation } from "react-i18next";
 import { assets } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
+import CurrencyContext from "../context/CurrencyContext";
+import AppContext from "../context/AppContext";
 
 const Product = ({
   pckg,
@@ -16,77 +18,75 @@ const Product = ({
 }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const { formatPrice } = useContext(CurrencyContext);
+  const { userLang } = useContext(AppContext);
 
-  const ribbonColor = (badge) => {
-    if (badge == "Budget") {
-      return "#009dff";
-    } else if (badge == "Silver") {
-      return "#8F00FF";
-    } else {
-      return "#ff9100";
-    }
-  };
+  const ribbonColor = (b) =>
+    b === "Budget" ? "#009dff" : b === "Silver" ? "#8F00FF" : "#ff9100";
 
   return (
     <div
-      onClick={() => {
-        if (window.innerWidth < 769) navigate(`/product/${pckg.id}`);
-      }}
-      className="bg-white inline-block md:ml-0.5 p-1 rounded-lg shadow-lg cursor-pointer md:cursor-default transition duration-150 ease-in-out active:scale-[0.98] active:bg-gray-100"
+      onClick={() =>
+        window.innerWidth < 769 &&
+        navigate(`/more-details/${pckg.id}`, { state: { pckg } })
+      }
+      className="bg-white inline-block p-1 rounded-lg shadow-lg cursor-pointer md:cursor-default transition-transform active:scale-[0.98] "
+      dir={userLang === "ar" || userLang === "he" ? "rtl" : "ltr"}
     >
       <Badge.Ribbon text={t(badge)} color={ribbonColor(badge)}>
-        <div>
+        <img
+          className="h-[110px] md:h-[130px] w-[150px] md:w-[180px] rounded-t-lg object-cover"
+          src={lead_img}
+          alt=""
+        />
+
+        {/* Days + Reviews */}
+        <div className="mt-1 flex justify-between items-start rtl:flex-row-reverse">
+          <div className="flex items-center text-xs">
+            <span className="font-semibold">{t("days")}</span>
+            <span className="ml-1">{num_days}</span>
+          </div>
+          <div className="text-xs">{t(country)}</div>
           <img
-            className="h-[110px] md:h-[130px] w-[150px] md:w-[180px] rounded-t-lg object-cover"
-            src={lead_img}
-            alt="product image"
+            className="h-6 w-12 pb-2 object-contain"
+            src={assets.review}
+            alt=""
           />
         </div>
-        <div className="mt-1 flex justify-between items-start">
-          <div className="flex flex-row">
-            <div className="text-xs text-gray-900 md:font-semibold">
-              {t("days")}
-            </div>
-            <div className="text-xs text-gray-700 ml-0.5">{num_days}</div>
-          </div>
-          <div className="text-xs text-gray-900">{t(country)}</div>
-          <div>
-            <img
-              className="h-6 w-12 pb-2 md:pb-1 object-contain"
-              src={assets.review}
-              alt=""
-            />
-          </div>
-        </div>
-        <div className="w-[150px] md:w-[180px] text-sm md:font-semibold text-black leading-none">
+
+        {/* Title */}
+        <div className="w-[150px] md:w-[180px] text-sm font-semibold text-black leading-none">
           {title}
         </div>
-        <div className="flex justify-between mt-1 md:mt-3">
-          <div className="justify-start leading-none">
-            <span className="text-xs text-gray-600 md:text-gray-800 leading-none block">
-              {t("from")}
-            </span>
-            <span className="text-sm md:text-base text-secondary font-bold leading-none block">
-              ${pal_price}
-            </span>
-            <span className="text-xs text-gray-600 md:text-gray-800 leading-none block">
-              {t("withPalSafari")}
-            </span>
+
+        {/* Prices */}
+        <div className="flex justify-between mt-1 md:mt-3 rtl:flex-row-reverse">
+          {/* PalSafari price */}
+          <div className="leading-none text-left rtl:text-right">
+            <div className="text-xs text-gray-600">{t("from")}</div>
+            <div className="text-xs text-secondary font-semibold">
+              {formatPrice(pal_price)}
+            </div>
+            <div className="text-xs text-gray-600">{t("withPalSafari")}</div>
           </div>
-          <div className="justify-end leading-tight">
-            <span className="text-xs text-gray-600 md:text-gray-800 leading-tight block">
-              {t("listed")}
-            </span>
-            <span className=" text-gray-600 md:text-gray-800 line-through blocspan">
-              ${listed_price}
-            </span>
+
+          {/* Listed price */}
+          <div className="text-right leading-none rtl:text-left">
+            <div className="text-xs text-gray-600">{t("listed")}</div>
+            <div className="text-xs line-through text-gray-600 mt-0">
+              {formatPrice(listed_price)}
+            </div>
           </div>
         </div>
+
+        {/* Button */}
         <button
-          onClick={() => navigate(`/product/${pckg.id}`)}
-          className="hidden md:block bg-primary text-white font-semibold py-0.5 md:py-1 w-full rounded-lg mt-2 transition-transform hover:scale-105 hover:bg-primary2"
+          onClick={() =>
+            navigate(`/more-details/${pckg.id}`, { state: { pckg } })
+          }
+          className="hidden md:block bg-primary text-white font-semibold py-1 w-full rounded-lg mt-2 cursor-pointer hover:scale-105 transition"
         >
-          MORE DETAILS
+          {t("moreDetBtn")}
         </button>
       </Badge.Ribbon>
     </div>

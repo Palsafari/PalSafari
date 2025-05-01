@@ -1,7 +1,7 @@
 import React from "react";
 
-const HostsHome = () => {
+const ReserveNow = () => {
   return <div></div>;
 };
 
-export default HostsHome;
+export default ReserveNow;

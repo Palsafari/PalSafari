@@ -6,7 +6,7 @@ import MyBookings from "./pages/MyBookings";
 import MyWishlist from "./pages/MyWishlist";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
-import HostsHome from "./pages/HostsHome";
+import Hosts from "./pages/Hosts";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import RefundPolicy from "./pages/RefundPolicy";
 import TermsOfService from "./pages/TermsOfService";
@@ -21,6 +21,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import MyProfile from "./pages/MyProfile";
 import MyReservations from "./pages/MyReservations";
+import BookNow from "./pages/BookNow";
+import ReserveNow from "./pages/ReserveNow";
 
 const App = () => {
   const RTL_LANGUAGES = ["ar", "he", "fa", "ps", "ur"];
@@ -43,7 +45,7 @@ const App = () => {
         <Route path="/my-bookings" element={<MyBookings />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
-        <Route path="/hosts" element={<HostsHome />} />
+        <Route path="/hosts" element={<Hosts />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
@@ -54,7 +56,11 @@ const App = () => {
         <Route path="/all-hikings" element={<AllHikings />} />
         <Route path="/all-suns" element={<AllSuns />} />
         <Route path="/all-cultures" element={<AllCultures />} />
-        <Route path="/product/:id" element={<MoreDetails />} />
+        <Route path="/more-details/:id" element={<MoreDetails />} />
+        <Route path="/book-now" element={<BookNow />} />
+        <Route path="/book-now/:id" element={<BookNow />} />
+        <Route path="/reserve-now" element={<ReserveNow />} />
+        <Route path="/reserve-now/:id" element={<ReserveNow />} />
       </Routes>
       <Footer />
     </div>

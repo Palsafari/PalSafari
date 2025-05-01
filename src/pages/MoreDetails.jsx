@@ -1,6 +1,7 @@
 import React, { useMemo, useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useLocation } from "react-router-dom";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -17,23 +18,45 @@ import {
   HandCoins,
   ChevronRight,
 } from "lucide-react";
-import { useTranslation } from "react-i18next";
-import { safariPackages, visaPolicies } from "../assets/assets";
+import ItineraryMap from "../components/ItineraryMap";
+import { useTranslation, Trans } from "react-i18next";
+import {
+  safariPackages,
+  hikingPackages,
+  sunPackages,
+  culturePackages,
+  visaPolicies,
+} from "../assets/assets";
 import { teenDiscounts } from "../assets/assets";
 import { childDiscounts } from "../assets/assets";
 import AppContext from "../context/AppContext";
+import CurrencyContext from "../context/CurrencyContext";
 
 const MoreDetails = () => {
   const { id } = useParams();
+  const { t } = useTranslation();
+  const { userLang, userCountry } = useContext(AppContext);
+  const { formatPrice } = useContext(CurrencyContext);
+  const monthName = new Date().toLocaleString("default", { month: "long" });
+  const location = useLocation();
+  const pckg = location.state?.pckg || location.state?.tourPackage;
+
   {
     /* TO DO: Find the tourPackage below from an allPackages array that has already been paginated and was shown in the carousel. */
   }
-  // Create the Map just once unless safariPackages changes
+
+  const allPackages = [
+    ...safariPackages,
+    ...hikingPackages,
+    ...sunPackages,
+    ...culturePackages,
+  ];
+  // Create a Map for fast lookup of packages by ID
   const allPackagesMap = useMemo(() => {
     const map = new Map();
-    safariPackages.forEach((pckg) => map.set(pckg.id, pckg));
+    allPackages.forEach((pckg) => map.set(pckg.id, pckg));
     return map;
-  }, [safariPackages]);
+  }, [allPackages]);
 
   // Fast lookup using the Map
   const tourPackage = allPackagesMap.get(parseInt(id));
@@ -45,15 +68,23 @@ const MoreDetails = () => {
   const [previewImages, setPreviewImages] = useState([]);
   const [previewStartIndex, setPreviewStartIndex] = useState(0);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
-  const { userLang } = useContext(AppContext);
-
-  const { t } = useTranslation();
 
   const handlePreview = (imagesArray, startIndex) => {
     setPreviewImages(imagesArray);
     setPreviewStartIndex(startIndex);
     setIsPreviewOpen(true);
   };
+
+  const isLocal =
+    userCountry?.toLowerCase() === tourPackage.country?.toLowerCase();
+  const isHighSeason = tourPackage.high_season.includes(monthName);
+  const pal_price = isLocal
+    ? isHighSeason
+      ? tourPackage.loc_high_season_price
+      : tourPackage.loc_low_season_price
+    : isHighSeason
+    ? tourPackage.int_high_season_price
+    : tourPackage.int_low_season_price;
 
   {
     /* Function to get itinerary elements for each day of the tour */
@@ -173,6 +204,15 @@ const MoreDetails = () => {
                 </div>
               ))}
             </div>
+            <p
+              className={
+                tourPackage.badge == "Budget"
+                  ? "hidden"
+                  : "text-xs text-orange-500 mt-0.5 text-center"
+              }
+            >
+              {t("snacksBeverages")}
+            </p>
           </div>
         </div>
       );
@@ -243,12 +283,12 @@ const MoreDetails = () => {
         </div>
 
         {/* Pricing */}
-        <div className="text-sm md:pr-1.5 md:text-right">
-          <div className="text-sm text-gray-600">{t("from")}</div>
-          <div className="text-secondary font-bold text-lg">
-            ${tourPackage.low_season_price}
+        <div className="text-sm md:pr-1.5 md:text-right leading-none">
+          <div className="text-xs text-gray-600">{t("from")}</div>
+          <div className="text-secondary font-bold text-base">
+            {formatPrice(pal_price)}
           </div>
-          <div className="text-sm text-gray-600">{t("onlyAtPalSafari")}</div>
+          <div className="text-xs text-gray-600">{t("onlyAtPalSafari")}</div>
         </div>
 
         {/* Star Rating */}
@@ -309,7 +349,7 @@ const MoreDetails = () => {
         {activeTab === "overviewTab" && (
           <div>
             <p>{tourPackage.description[userLang]}</p>
-            <h3 className="mt-6 text-lg text-tertiary font-semibold">
+            <h3 className="mt-6 text-center text-lg text-tertiary font-semibold">
               {t("whatUget")}
             </h3>
             <ul className="list-none mt-1">
@@ -375,7 +415,7 @@ const MoreDetails = () => {
               </li>
               <li
                 className={
-                  tourPackage.translation_services == true
+                  tourPackage.translation_services === true
                     ? "flex items-center"
                     : "hidden"
                 }
@@ -389,7 +429,7 @@ const MoreDetails = () => {
               </li>
               <li
                 className={
-                  tourPackage.wifi_provided == true
+                  tourPackage.wifi_provided === true
                     ? "flex items-center"
                     : "hidden"
                 }
@@ -438,6 +478,18 @@ const MoreDetails = () => {
                 </div>
               </li>
             </ul>
+            <div
+              className={
+                tourPackage.locations.length < 2 ? "hidden" : "block h-72 w-72"
+              }
+            >
+              <h3 className="mt-7 text-lg text-tertiary font-semibold">
+                {t("itineraryMap")}
+              </h3>
+              <div className="mt-1">
+                <ItineraryMap locations={tourPackage.locations} />
+              </div>
+            </div>
           </div>
         )}
 
@@ -454,16 +506,11 @@ const MoreDetails = () => {
               </div>
               <ul className="mt-0.5">
                 <li>{tourPackage.meeting_Up_Directions[userLang]}</li>
-                <li
-                  className={
-                    tourPackage.visa_required == false &&
-                    visaPolicies[tourPackage.country][userLang]
-                      ? "block"
-                      : "hidden"
-                  }
-                >
-                  {visaPolicies[tourPackage.country][userLang]}
-                </li>
+                {tourPackage.visa_required === false &&
+                  visaPolicies[tourPackage.country]?.[userLang] && (
+                    <li>{visaPolicies[tourPackage.country][userLang]}</li>
+                  )}
+
                 <li className={tourPackage.num_nights > 0 ? "block" : "hidden"}>
                   {t("delayedArrival")}
                 </li>
@@ -714,11 +761,39 @@ const MoreDetails = () => {
             <ul className="mt-1.5 list-disc ltr:pl-4 rtl:pr-4 space-y-1">
               <li>{t("priceGuideChildren")}</li>
               <li>{t("priceGuideTeens")}</li>
-              <li>{t("priceGuideAdults")}</li>
+              <li>
+                <Trans
+                  i18nKey="priceGuideAdults"
+                  components={{
+                    bold: <strong className="font-semibold" />,
+                  }}
+                />
+              </li>
               <li>{t("priceGuideMinPax")}</li>
-              <li>{t("priceGuidePrice")}</li>
-              <li>{t("priceGuideKlarna")}</li>
-              <li>{t("priceGuideRefundPolicy")}</li>
+              <li>
+                <Trans
+                  i18nKey="priceGuidePrice"
+                  components={{
+                    bold: <strong className="font-semibold" />,
+                  }}
+                />
+              </li>
+              <li>
+                <Trans
+                  i18nKey="priceGuideBNPL"
+                  components={{
+                    bold: <strong className="font-semibold" />,
+                  }}
+                />
+              </li>
+              <li>
+                <Trans
+                  i18nKey="priceGuideRefundPolicy"
+                  components={{
+                    bold: <strong className="font-semibold" />,
+                  }}
+                />
+              </li>
             </ul>
           </div>
         )}
@@ -730,7 +805,12 @@ const MoreDetails = () => {
               {t("howToBookReserve")}
             </h3>
             <div className="mt-1">
-              <p>{t("howToBookIntro")}</p>
+              <p>
+                <Trans
+                  i18nKey="howToBookIntro"
+                  components={{ bold: <strong className="font-semibold" /> }}
+                />
+              </p>
               <ul className="mt-0.5 pl-2 space-y-2">
                 <li>
                   <div className="flex items-start">
@@ -745,7 +825,14 @@ const MoreDetails = () => {
                     <div>
                       <ChevronRight className="ml-1 pt-1 text-primary w-5 h-5 ltr:ml-1 rtl:mr-1 rtl:rotate-180" />
                     </div>
-                    <div className="ml-0.5">{t("howToBook3")}</div>
+                    <div className="ml-0.5">
+                      <Trans
+                        i18nKey="howToBook3"
+                        components={{
+                          bold: <strong className="font-semibold" />,
+                        }}
+                      />
+                    </div>
                   </div>
                 </li>
                 <li>
@@ -753,7 +840,14 @@ const MoreDetails = () => {
                     <div>
                       <ChevronRight className="ml-1 pt-1 text-primary w-5 h-5 ltr:ml-1 rtl:mr-1 rtl:rotate-180" />
                     </div>
-                    <div className="ml-0.5">{t("howToBook4")}</div>
+                    <div className="ml-0.5">
+                      <Trans
+                        i18nKey="howToBook4"
+                        components={{
+                          bold: <strong className="font-semibold" />,
+                        }}
+                      />
+                    </div>
                   </div>
                 </li>
               </ul>

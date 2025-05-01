@@ -7,7 +7,6 @@ import { useTranslation } from "react-i18next";
 import Product from "./Product";
 import {
   afterLargestDiscountFraction,
-  assets,
   culturePackages,
 } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
@@ -16,8 +15,9 @@ import AppContext from "../context/AppContext";
 const Cultures = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const { userLang, userCountry } = useContext(AppContext);
 
-  const { userLang } = useContext(AppContext);
+  const monthName = new Date().toLocaleString("default", { month: "long" });
 
   return (
     <div
@@ -26,12 +26,14 @@ const Cultures = () => {
       }
     >
       <div className="inline-flex items-center justify-center w-full rtl:space-x-reverse">
-        <hr className="w-full h-px my-8 bg-secondary border-0" />
+        <hr className="w-full h-px my-8 bg-gray-400 border-0" />
         <span className="absolute px-3 text-sm md:text-lg font-medium text-tertiary -translate-x-1/2 bg-gray-200 left-1/2 leading-tight">
           {t("culturesFaith")}
         </span>
       </div>
+
       <Swiper
+        dir={userLang === "ar" ? "rtl" : "ltr"}
         slidesPerView={2.2}
         spaceBetween={25}
         navigation={true}
@@ -39,57 +41,51 @@ const Cultures = () => {
         watchOverflow={true}
         breakpoints={{
           640: {
-            // Small screens (mobile)
-            slidesPerView: 2.4, // Slightly smaller preview
-            spaceBetween: 15, // Reduce spacing on small screens
+            slidesPerView: 2.4,
+            spaceBetween: 15,
           },
           768: {
-            // Tablets
             slidesPerView: 3.2,
             spaceBetween: 20,
           },
           1024: {
-            // Larger screens
             slidesPerView: 4.2,
             spaceBetween: 25,
           },
         }}
         className="rtl:space-x-reverse"
       >
-        {culturePackages.map((culturePackage) => (
-          <SwiperSlide key={culturePackage.id}>
-            <Product
-              pckg={culturePackage}
-              badge={culturePackage.badge || "AFFORDABLE"}
-              lead_img={culturePackage.lead_image[0] || assets.lead_img}
-              num_days={culturePackage.num_days || 1}
-              country={culturePackage.country || "International"}
-              title={
-                culturePackage.title[userLang] ||
-                "Exciting PalSafari destination"
-              }
-              pal_price={
-                culturePackage.high_season.includes(
-                  new Date().toLocaleString("en-US", { month: "long" })
-                )
-                  ? Math.ceil(
-                      (culturePackage.high_season_price || 200) *
-                        ((100 - (culturePackage.discount.percentage || 5)) /
-                          100)
-                    )
-                  : Math.ceil(
-                      (culturePackage.low_season_price || 150) *
-                        ((100 - (culturePackage.discount.percentage || 5)) /
-                          100)
-                    )
-              }
-              listed_price={Math.ceil(
-                (culturePackage.high_season_price || 200) *
-                  (afterLargestDiscountFraction || 1)
-              )}
-            />
-          </SwiperSlide>
-        ))}
+        {culturePackages.map((culturePackage) => {
+          const isLocal =
+            userCountry?.toLowerCase() ===
+            culturePackage.country?.toLowerCase();
+          const isHighSeason = culturePackage.high_season.includes(monthName);
+
+          const pal_price = isLocal
+            ? isHighSeason
+              ? culturePackage.loc_high_season_price
+              : culturePackage.loc_low_season_price
+            : isHighSeason
+            ? culturePackage.int_high_season_price
+            : culturePackage.int_low_season_price;
+
+          const listed_price = pal_price * afterLargestDiscountFraction;
+
+          return (
+            <SwiperSlide key={culturePackage.id}>
+              <Product
+                pckg={culturePackage}
+                badge={culturePackage.badge}
+                lead_img={culturePackage.lead_image[0]}
+                num_days={culturePackage.num_days || 1}
+                country={culturePackage.country}
+                title={culturePackage.title[userLang]}
+                pal_price={Math.ceil(pal_price)}
+                listed_price={Math.ceil(listed_price)}
+              />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
 
       <div className="inline-flex items-center justify-center w-full rtl:space-x-reverse">
@@ -97,8 +93,10 @@ const Cultures = () => {
         <div className="absolute bg-gray-200">
           <button
             type="button"
-            className=" m-2 mb-2 py-1 px-3 text-sm font-semibold text-primary hover:cursor-pointer hover:scale-110 transition-transform focus:outline-none bg-gray-200 rounded-lg border border-primary hover:bg-gray-100 hover:text-primary2"
-            onClick={() => navigate("/all-cultures")}
+            className="m-2 mb-2 py-1 px-3 text-sm font-semibold text-primary hover:cursor-pointer hover:scale-110 transition-transform focus:outline-none bg-gray-200 rounded-lg border border-primary hover:bg-gray-100 hover:text-primary2"
+            onClick={() =>
+              navigate("/all-cultures", { state: { culturePackages } })
+            }
           >
             {t("viewAllBtn")}
           </button>
